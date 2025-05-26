@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProWeb Solutions | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5dc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background-color: #e5e5c9;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn {
+      background-color: #333;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 1rem;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-color: #555;
+      outline: none;
+    }
+
+    section {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .services,
+    .projects,
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .card .btn {
+      margin-top: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input,
+    textarea,
+    select {
+      padding: 0.75rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #e5e5c9;
+      font-size: 0.9rem;
+    }
+
+    /* Testimonials slider styles */
+    #testimonials {
+      position: relative;
+    }
+
+    .testimonial-slider {
+      overflow: hidden;
+      outline: none;
+      position: relative;
+    }
+
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      gap: 1rem;
+    }
+
+    .testimonial-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      min-width: 280px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testimonial-quote {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .testimonial-author img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .testimonial-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .testimonial-buttons button {
+      background-color: rgba(51, 51, 51, 0.8);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50%;
+      cursor: pointer;
+      pointer-events: all;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .testimonial-buttons button:hover,
+    .testimonial-buttons button:focus {
+      background-color: #333;
+      outline: none;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      header p,
+      .section-title {
+        font-size: 1rem;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>ProWeb Solutions</h1>
+    <p>I build modern, responsive websites for businesses.</p>
+    <a href="#contact" class="btn">Let's Work Together</a>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>Hi! I'm a 17-year-old web developer passionate about helping businesses get online. I specialize in clean,
+      responsive websites using modern technologies. I may be young, but I bring fresh ideas and reliable work ethic to
+      every project.</p>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Website Design</h3>
+        <p>Beautiful, user-friendly interfaces designed to match your brand and goals.</p>
+      </div>
+      <div class="card">
+        <h3>Web Development</h3>
+        <p>From simple sites to full solutions, I build fast, functional websites.</p>
+      </div>
+      <div class="card">
+        <h3>Maintenance</h3>
+        <p>I provide updates and support to keep your site secure and current.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2 class="section-title">Pricing</h2>
+    <div class="pricing">
+      <div class="card">
+        <h3>Starter</h3>
+        <p>Perfect for small personal or informational websites.</p>
+        <p><strong>$50</strong> - One Page Design</p>
+        <a href="tel:*123#" class="btn">Pay with M-Pesa</a>
+      </div>
+      <div class="card">
+        <h3>Business</h3>
+        <p>Great for businesses looking to establish an online presence.</p>
+        <p><strong>$150</strong> - Up to 5 Pages</p>
+        <a href="tel:*123#" class="btn">Pay with M-Pesa</a>
+      </div>
+      <div class="card">
+        <h3>Premium</h3>
+        <p>Complete website solution with advanced features and support.</p>
+        <p><strong>$300+</strong> - Custom Features & Ongoing Support</p>
+        <a href="tel:*123#" class="btn">Pay with M-Pesa</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2 class="section-title">My Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Business Landing Page</h3>
+        <p>A sleek one-page site built for a local business to showcase services.</p>
+      </div>
+      <div class="card">
+        <h3>School Club Website</h3>
+        <p>An info site for a school club featuring events, members, and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2 class="section-title">Testimonials</h2>
+    <div class="testimonial-slider" tabindex="0" aria-label="Testimonials carousel">
+      <div class="testimonial-track" id="testimonialTrack">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "ProWeb Solutions built a clean and professional site for my consulting business. The process was smooth and
+            timely, and the final result exceeded my expectations."
+          </p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" />
+            <div>John Doe</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "I wanted a website to showcase my art portfolio, and ProWeb Solutions delivered exactly what I needed. They
+            were attentive and offered great design suggestions."
+          </p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah M." />
+            <div>Sarah M.</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Fast, professional, and affordable web development services. My e-commerce site looks fantastic and functions
+            perfectly on all devices."
+          </p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/58.jpg" alt="Michael T." />
+            <div>Michael T.</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-buttons">
+        <button id="prevBtn" aria-label="Previous testimonial">&lt;</button>
+        <button id="nextBtn" aria-label="Next testimonial">&gt;</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="order">
+    <h2 class="section-title">Place Your Order</h2>
+    <form action="https://formsubmit.co/proweb.ke@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="thank-you.html" />
+      <input type="hidden" name="_subject" value="New Website Order from ProWeb Portfolio" />
+      <label for="service">Choose a Service:</label>
+      <select id="service" name="service" required>
+        <option value="">-- Select a service --</option>
+        <option value="starter">Starter Website - $50</option>
+        <option value="business">Business Website - $150</option>
+        <option value="premium">Premium Website - $300+</option>
+      </select>
+      <label for="details">Describe what you want:</label>
+      <textarea id="details" name="details" rows="6" placeholder="Describe your website needs, preferred style, number of pages, features, etc." required></textarea>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <button type="submit" class="btn">Submit Order</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <p style="text-align: center; margin-bottom: 1rem;">
+      Phone:
+      <a href="tel:+254769271319">+254 769 271 319</a> |
+      Email:
+      <a href="mailto:proweb.ke@gmail.com">proweb.ke@gmail.com</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 ProWeb Solutions. All rights reserved.
+  </footer>
+
+  <script>
+    const track = document.getElementById('testimonialTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slider = document.querySelector('.testimonial-slider');
+    const slides = track.children;
+    let currentIndex = 0;
+    let slideInterval;
+
+    function updateSlider() {
+      const slideWidth = slides[0].offsetWidth + 16; // card width + margin approx (adjusted for gap)
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    function showPrev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+        resetAutoplay();
+      }
+    }
+
+    function showNext() {
+      if (currentIndex < slides.length - 1) {
+        currentIndex++;
+        updateSlider();
+        resetAutoplay();
+      } else {
+        currentIndex = 0;
+        updateSlider();
+        resetAutoplay();
+      }
+    }
+
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+
+    // Keyboard support
+    slider.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') {
+        showPrev();
+      } else if (e.key === 'ArrowRight') {
+        showNext();
+      }
+    });
+
+    // Autoplay every 4 seconds
+    function startAutoplay() {
+      slideInterval = setInterval(() => {
+        if (currentIndex < slides.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+        updateSlider();
+      }, 4000);
+    }
+
+    function resetAutoplay() {
+      clearInterval(slideInterval);
+      startAutoplay();
+    }
+
+    // Swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slider.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    slider.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const swipeDistance = touchEndX - touchStartX;
+      if (swipeDistance > 50) {
+        showPrev();
+      } else if (swipeDistance < -50) {
+        showNext();
+      }
+    }
+
+    window.addEventListener('resize', updateSlider);
+
+    // Initialize slider and autoplay
+    updateSlider();
+    startAutoplay();
+  </script>
+</body>
+
+</html>
